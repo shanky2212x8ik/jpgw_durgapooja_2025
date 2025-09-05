@@ -1,83 +1,89 @@
 body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #f0f4ff, #e0f7fa);
-      margin: 0;
-      padding: 20px;
-    }
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f0f4ff, #e0f7fa);
+    margin: 0;
+    padding: 20px;
+}
 
-    .form-container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.8s ease-in-out;
-    }
+.form-container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-    h2 {
-      text-align: center;
-      color: #0077b6;
-      margin-bottom: 20px;
-    }
+h2 {
+    text-align: center;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #333;
-    }
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
 
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      transition: border-color 0.3s ease;
-    }
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
 
-    input:focus, select:focus {
-      border-color: #0077b6;
-      outline: none;
-      background-color: #eef;
-    }
+input:focus, select:focus {
+    border-color: #0077b6;
+    outline: none;
+    background-color: #eef;
+}
 
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #0077b6;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.required-star {
+    color: red;
+    margin-left: 4px;
+    font-weight: bold;
+}
 
-    button:hover {
-      background-color: #005f8e;
-    }
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-	.input-group {
-  position: relative;
+button:hover {
+    background-color: #005f8e;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.input-group {
+    position: relative;
 }
 
 .input-group i {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  color: #0077b6;
-  font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #0077b6;
+    font-size: 18px;
 }
 
 .input-group input,
 .input-group select {
-  padding-left: 40px; /* space for icon */
+    padding-left: 40px; /* space for icon */
 }

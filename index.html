@@ -11,7 +11,7 @@
 <p id="currentLocation"></p>
 
 <form id="pujaForm" novalidate>
-    <label for="block">Block</label>
+    <label for="block">Block <span class="required-star">*</span></label>
     <select id="block" required>
         <option value="">Select Block</option>
         <option value="A Block">A Block</option>
@@ -20,10 +20,10 @@
     </select>
 
     <div id="locationFields">
-        <label for="tower">Tower</label>
+        <label for="tower">Tower <span class="required-star">*</span></label>
         <select id="tower" required></select>
 
-        <label for="floor">Floor</label>
+        <label for="floor">Floor <span class="required-star">*</span></label>
         <select id="floor" required>
             <option value="">Select Floor</option>
             <option value="1">1</option>
@@ -32,40 +32,35 @@
             <option value="4">4</option>
         </select>
 
-        <label for="flatNumber">Flat Number</label>
+        <label for="flatNumber">Flat Number <span class="required-star">*</span></label>
         <select id="flatNumber" required></select>
     </div>
 
-    <label for="type">Type</label>
+    <label for="type">Type <span class="required-star">*</span></label>
     <select id="type" required>
         <option value="">Select Type</option>
         <option value="Resident">Resident</option>
         <option value="Vacant">Vacant</option>
-        <option value="Locked">Locked</option>
-        <option value="NotInterested">Not Interested</option>
+        <option value="NotInterested">NotInterested</option>
     </select>
 
     <div id="paymentFields">
-        <label for="name">Name</label>
-        <input type="text" id="name" required />
+        <label for="name">Name(payee name in case of UPI)</label>
+        <input type="text" id="name"/>
 
-        <label for="amount">Amount</label>
+        <label for="amount">Amount <span class="required-star">*</span></label>
         <input type="number" id="amount" required />
 
-        <label for="mode">Payment Mode</label>
+        <label for="mode">Payment Mode <span class="required-star">*</span></label>
         <select id="mode" required>
             <option value="">Select Mode</option>
             <option value="Cash">Cash</option>
             <option value="UPI">UPI</option>
-            <option value="BankTransfer">Bank Transfer</option>
         </select>
 
         <div id="upiDetailsContainer" style="display: none;">
             <label for="transactionId">UPI Transaction ID</label>
             <input type="text" id="transactionId" name="transactionId" placeholder="Enter UPI Transaction ID" />
-
-            <label for="upiScreenshot">Upload Screenshot (optional)</label>
-            <input type="file" id="upiScreenshot" name="upiScreenshot" accept="image/*" />
         </div>
 
         <label for="date">Date</label>
@@ -93,5 +88,19 @@
 
 <script src="flat_data.js"></script>
 <script src="jpgw_layout.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const modeSelect = document.getElementById("mode");
+        const upiDetailsContainer = document.getElementById("upiDetailsContainer");
+
+        modeSelect.addEventListener("change", function () {
+            if (modeSelect.value === "UPI") {
+                upiDetailsContainer.style.display = "block";
+            } else {
+                upiDetailsContainer.style.display = "none";
+            }
+        });
+    });
+</script>
 </body>
 </html>
